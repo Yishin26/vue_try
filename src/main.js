@@ -19,6 +19,10 @@ import MyView from '../src/components/MyView/MyView.vue'
 
 var myRoutesRules=[
   {
+    path:'/', //默認根目錄也到首頁
+    component:HomeView 
+  },
+  {
     path:'/home', //不用加.
     component:HomeView //是元件不用''
   },
