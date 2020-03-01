@@ -3,9 +3,13 @@ import App from './App.vue'
 
 //Step1:引入
 import VueRouter from 'vue-router'
+import Axios from 'axios'
+
+
 Vue.use(VueRouter)
 
 Vue.config.productionTip = false
+Vue.prototype.$ajax = Axios; //要在vue使用axios必要這一行
 
 
 //Step2:導入組件

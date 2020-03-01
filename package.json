@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "apache-2.0": "^1.0.7",
+    "axios": "^0.19.2",
     "core-js": "^3.6.4",
     "vant": "^2.5.2",
     "vue": "^2.6.11",
@@ -36,7 +37,9 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "indent": "off"
+    }
   },
   "browserslist": [
     "> 1%",
