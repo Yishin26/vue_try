@@ -1,22 +1,27 @@
 <template>
   <div class="home-view">
-    首頁<br>
-    <van-button type="primary">主要按钮</van-button>
+    首頁
+    <br />
   </div>
-  
 </template>
 
 <script>
-import { Button } from 'vant';
 export default {
-name:'HomeView',
-components:{
-  [Button.name]:Button
-}
-
-}
+  name: "HomeView",
+  data() {
+    return {
+      title: "首頁",
+      navViewShow:true
+    };
+  },
+  created() {
+    //console.log(this.title);
+    //發送標題給App.Vue
+    this.$emit("onTitle", this.title);
+    this.$emit("onNavShow",this.navViewShow)
+  }
+};
 </script>
 
 <style>
-
 </style>
