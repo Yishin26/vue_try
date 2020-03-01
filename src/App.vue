@@ -1,31 +1,38 @@
 <template>
   <div id="app">
     <!--頭部導航-->
-    <van-nav-bar :title="title" fixed v-show="navViewShow"/>
+    <van-nav-bar :title="title" fixed v-show="navViewShow" />
 
     <!--內容：使用路由模板所指定的-->
     <router-view @onTitle="getTitle" @onNavShow="getNavViewShow"></router-view>
 
     <!--底部切換導航-->
-    <TabView></TabView>
+    <van-tabbar v-model="active">
+      <van-tabbar-item icon="shop-o" to='/home'>首頁</van-tabbar-item>
+      <van-tabbar-item icon="apps-o" to='/assort'>分類</van-tabbar-item>
+      <van-tabbar-item icon="search" to='/search'>搜索</van-tabbar-item>
+      <van-tabbar-item icon="shopping-cart-o" to='/cart'>購物車</van-tabbar-item>
+      <van-tabbar-item icon="user-o" to='/mine'>我的</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
 
 <script>
-import { NavBar } from "vant";
-import TabView from "./components/TabView/TabView";
+import { NavBar, Tabbar, TabbarItem } from "vant";
 
 export default {
   name: "App",
   components: {
-    TabView,
-    [NavBar.name]: NavBar
+    [NavBar.name]: NavBar,
+    [Tabbar.name]: Tabbar,
+    [TabbarItem.name]: TabbarItem
   },
   data() {
     return {
       title: "", //接收導航標題
-      navViewShow: true
+      navViewShow: true,
       //接收子組件是否需要顯示
+      active: 0
     };
   },
   methods: {
