@@ -1,6 +1,6 @@
 <template>
   <div class="selling-view">
-    <GoodsItemView v-for='goods in sellings' :goods='goods' :key='goods.id'>
+    <GoodsItemView v-for='goods in sellings' :goods='goods' :key='goods.id' >
       
     </GoodsItemView>
   </div>
@@ -31,7 +31,8 @@ export default {
       .catch(function(err) {
         console.log(err);
       });
-  }
+  },
+  
 };
 </script>
 

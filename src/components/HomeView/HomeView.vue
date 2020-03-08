@@ -17,6 +17,9 @@
     <TitleView name='精選活動' icon='fire'></TitleView>
     <TitleView name='為您推薦' icon='star'></TitleView>
 
+    <!--商品詳情-->
+    <GoodsDetailView v-if="goodsDetailShow"></GoodsDetailView>
+    
   </div>
 </template>
 
@@ -25,12 +28,14 @@ import { Swipe, SwipeItem } from "vant";
 import CategoryView from '../HomeView/CategoryView/CategoryView'
 import TitleView from '../HomeView/TitleView/TitleView'
 import SellingView from '../HomeView/SellingView/SellingView'
+import GoodsDetailView from '../HomeView/GoodsDetailView/GoodsDetailView'
 export default {
   name: "HomeView",
   components: {
     CategoryView,
     TitleView,
     SellingView,
+    GoodsDetailView,
     [Swipe.name]: Swipe,
     [SwipeItem.name]: SwipeItem
   },
@@ -38,9 +43,17 @@ export default {
     return {
       title: "首頁",
       navViewShow: true,
-      banner: []
+      banner: [],
+      //goodsDetailShow:false, //放到Main.js的vuex 狀態管理 及下面的computed
     }
   },
+  computed:{
+    goodsDetailShow(){
+      //根據狀態調整
+      return this.$store.state.goodsDetailShow
+    }
+  },
+  
   created() {
     //console.log(this.title);
     //發送標題給App.Vue

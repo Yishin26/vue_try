@@ -16,6 +16,33 @@ Vue.prototype.$ajax = Axios; //要在vue使用axios必要這一行
 import { Lazyload } from 'vant';
 Vue.use(Lazyload);
 
+//狀態管理
+import Vuex from 'vuex'
+Vue.use(Vuex);
+
+
+var store = new Vuex.Store({
+  //定義狀態
+  state:{
+    goodsDetailShow:false,
+    goodsItemID:0
+  
+  },
+  //定義方法 ->定義玩思考何時使用?
+  mutations:{
+    ChangeGoodsDetailShow(state){
+      state.goodsDetailShow=!state.goodsDetailShow;
+      console.log(state.goodsDetailShow)
+
+      
+    },
+    ChangeGoodsItemID(state,goodsID){
+      state.goodsItemID=goodsID;
+      console.log(state.goodsItemID)
+    }
+  }
+}
+)
 
 //Step2:導入組件
 import HomeView from '../src/components/HomeView/HomeView.vue'
@@ -64,6 +91,7 @@ var router=new VueRouter({
 new Vue({
   render: h => h(App),
   //Step5:添加路由對象
-  router
+  router,
+  store
 
 }).$mount('#app')

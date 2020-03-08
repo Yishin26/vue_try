@@ -1,5 +1,5 @@
 <template>
-  <div class="goods-item-view">
+  <div class="goods-item-view" @click="goodsItemClick(goods.id)">
     <img class="goodsImg" v-lazy="goods.img" />
     <p class="goodTitle">{{goods.title}}</p>
     <p class="goodDesctiption">{{goods.desc}}</p>
@@ -12,7 +12,16 @@
 <script>
 export default {
   name: "GoodsItemView",
-  props: ["goods"]
+  props: ["goods"],
+  methods:{
+    goodsItemClick: function(goodsId){ //點擊的時候觸發兩個動作：顯示出來與傳遞ID
+      console.log(goodsId);
+
+      //改變goodsDetailShow的狀態 vuex mutations
+      this.$store.commit('ChangeGoodsDetailShow')
+      this.$store.commit('ChangeGoodsItemID',goodsId)
+    }
+  }
 };
 </script>
 
