@@ -2,7 +2,8 @@
   <div class="home-view">
     <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
       <van-swipe-item v-for="item in banner" v-bind:key="item.id" >
-        <img :src="item.img" alt />
+        <!--img :src="item.img" alt  /-->
+        <img v-lazy='item.img' />
       </van-swipe-item>
     </van-swipe>
   </div>
@@ -58,5 +59,6 @@ export default {
 }
 .my-swipe img{
   width: 100%;
+  height: 9.875rem;
 }
 </style>

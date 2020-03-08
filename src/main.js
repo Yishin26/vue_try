@@ -12,6 +12,11 @@ Vue.config.productionTip = false
 Vue.prototype.$ajax = Axios; //要在vue使用axios必要這一行
 
 
+//懶加載
+import { Lazyload } from 'vant';
+Vue.use(Lazyload);
+
+
 //Step2:導入組件
 import HomeView from '../src/components/HomeView/HomeView.vue'
 import AssortView from '../src/components/AssortView/AssortView.vue'
