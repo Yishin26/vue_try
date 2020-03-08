@@ -26,7 +26,7 @@ export default {
 }
 .title-view h3{
     font-size: 16pt;
-    color: rgb(92, 92, 92);
+    color: rgb(0, 81, 255);
 }
 
 </style>

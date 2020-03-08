@@ -13,6 +13,7 @@
     
     <!--單品熱賣標題-->
     <TitleView name='單品熱賣' icon='point-gift'></TitleView>
+    <SellingView></SellingView>
     <TitleView name='精選活動' icon='fire'></TitleView>
     <TitleView name='為您推薦' icon='star'></TitleView>
 
@@ -23,11 +24,13 @@
 import { Swipe, SwipeItem } from "vant";
 import CategoryView from '../HomeView/CategoryView/CategoryView'
 import TitleView from '../HomeView/TitleView/TitleView'
+import SellingView from '../HomeView/SellingView/SellingView'
 export default {
   name: "HomeView",
   components: {
     CategoryView,
     TitleView,
+    SellingView,
     [Swipe.name]: Swipe,
     [SwipeItem.name]: SwipeItem
   },
