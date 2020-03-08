@@ -48,6 +48,9 @@ export default {
 </script>
 
 <style>
+#app{
+  background-color: rgb(235, 235, 235);
+}
 .van-nav-bar {
   height: 2.5rem;
   background-color: rgb(0, 119, 255);
@@ -59,4 +62,5 @@ export default {
 .van-nav-bar__title {
   color: aliceblue;
 }
+
 </style>

@@ -1,19 +1,33 @@
 <template>
   <div class="home-view">
+    <!--輪播圖-->
     <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
       <van-swipe-item v-for="item in banner" v-bind:key="item.id" >
         <!--img :src="item.img" alt  /-->
         <img v-lazy='item.img' />
       </van-swipe-item>
     </van-swipe>
+    
+    <!--分類-->
+    <CategoryView></CategoryView> 
+    
+    <!--單品熱賣標題-->
+    <TitleView name='單品熱賣' icon='point-gift'></TitleView>
+    <TitleView name='精選活動' icon='fire'></TitleView>
+    <TitleView name='為您推薦' icon='star'></TitleView>
+
   </div>
 </template>
 
 <script>
 import { Swipe, SwipeItem } from "vant";
+import CategoryView from '../HomeView/CategoryView/CategoryView'
+import TitleView from '../HomeView/TitleView/TitleView'
 export default {
   name: "HomeView",
   components: {
+    CategoryView,
+    TitleView,
     [Swipe.name]: Swipe,
     [SwipeItem.name]: SwipeItem
   },
